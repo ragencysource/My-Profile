@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rosa Oktafia Ragili - Digital Profile</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #2b2c48;
+            font-family: "Jost", sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-container {
+            width: 100%;
+            height: auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-header {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            padding-bottom: 200px;
+            width: 100%;
+            margin-bottom: -150px;
+            overflow: hidden;
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            height: 470px;
+            top: -20%;
+            left: 0;
+            will-change: top;
+            background-size: cover;
+            background-position: center;
+            filter: blur(30px);
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+
+        .card-avatar {
+            width: 295px;
+            height: 295px;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            object-position: center;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-fullname {
+            font-size: 65px;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+            color: #2b2c48;
+        }
+
+        .card-jobtitle {
+            font-size: 32px;
+            font-weight: 500;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            margin-top: -20px;
+            position: relative;
+            z-index: 2;
+            color: #2b2c48;
+        }
+
+        .content-wrapper {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card-section {
+            display: block;
+            border-top: 1px solid #eee;
+        }
+        .card-section:first-child{
+            border-top: none;
+        }
+
+        .card-subtitle {
+            font-weight: 700;
+            font-size: 38px;
+            margin-bottom: 24px;
+        }
+
+        .card-content {
+            padding: 90px 60px;
+        }
+
+        .card-desc {
+            line-height: 1.6;
+            color: #636b6f;
+            font-size: 36px;
+            margin: 0;
+            font-weight: 400;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .card-timeline {
+            margin-top: 90px;
+            position: relative;
+        }
+
+        .card-timeline:after {
+            background: linear-gradient(to top, rgba(81, 106, 204, 0.3) 0%, #516acc 100%);
+            content: "";
+            left: 124px;
+            width: 6px;
+            top: 20px;
+            height: 100%;
+            position: absolute;
+        }
+
+        .card-item {
+            position: relative;
+            padding-left: 176px;
+            padding-right: 60px;
+            padding-bottom: 90px;
+            z-index: 1;
+        }
+
+        .card-item:last-child {
+            padding-bottom: 15px;
+        }
+
+        .card-item:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 109px;
+            width: 24px;
+            height: 24px;
+            line-height: 0.6;
+            border: 6px solid #fff;
+            font-size: 32px;
+            border-radius: 50%;
+            color: rgba(134, 134, 134, 0.7);
+            background: linear-gradient(to bottom, #a0aee3 0%, #516acc 100%);
+        }
+
+        .card-item-year {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100px;
+            text-align: right;
+            font-size: 28px;
+            font-weight: 600;
+            color: #516acc;
+        }
+
+        .card-item-title {
+            font-weight: 500;
+            font-size: 41px;
+            margin-bottom: 15px;
+        }
+        .card-item-title span {
+            font-weight: 700;
+        }
+
+        .card-item-desc {
+            font-size: 38px;
+            color: #6f6f7b;
+            line-height: 1.5;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .card-contact-wrapper {
+            margin-top: 60px;
+        }
+
+        .card-contact {
+            display: flex;
+            align-items: center;
+            font-size: 38px;
+            color: #6f6f7b;
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .card-contact:hover {
+            color: #2b2c48;
+        }
+
+        .card-contact+.card-contact {
+            margin-top: 47px;
+        }
+        
+        .card-contact svg, .card-contact i {
+            flex-shrink: 0;
+            width: 88px;
+            min-height: 100px;
+            margin-right: 35px;
+            transition: 0.3s;
+            padding-right: 35px;
+            border-right: 1px solid #dfe2ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-contact i {
+            font-size: 50px;
+        }
+
+        .contact-me {
+            border: 0;
+            outline: none;
+            background: linear-gradient(to right, rgba(83, 200, 239, 0.8) 0%, rgba(81, 106, 204, 0.8) 96%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            color: #fff;
+            padding: 35px 47px;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 41px;
+            font-weight: 700;
+            font-family: "Jost", sans-serif;
+            transition: 0.3s;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin: 74px auto 0 auto;
+        }
+        .contact-me:hover {
+            box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <div class="content-wrapper">
+
+            <div class="card-header">
+                <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1521133573892-e44906baee46?q=80&w=2574&auto=format&fit=crop')"></div>
+                <img class="card-avatar" src="https://ik.imagekit.io/k5lygzuqu/rosa.jpg" alt="avatar" />
+                <h1 class="card-fullname">Rosa Oktafia Ragili</h1>
+                <h2 class="card-jobtitle">Digital Marketing Professional</h2>
+            </div>
+    
+            <div class="card-section" id="about">
+                <div class="card-content">
+                    <div class="card-subtitle">TENTANG SAYA</div>
+                    <p class="card-desc">Saya adalah seorang profesional digital marketing yang berdedikasi dengan pengalaman 4 tahun dalam mengembangkan dan mengimplementasi strategi pemasaran digital yang data-driven. Keahlian utama saya mencakup manajemen media sosial, Meta & TikTok Ads, dan analisis kampanye untuk menghasilkan pertumbuhan organik dan ROI yang terukur. Saya bersemangat untuk membawa ide-ide kreatif dan inovatif untuk membantu brand mencapai target bisnis mereka.</p>
+                </div>
+            </div>
+
+            <div class="card-section" id="experience">
+                <div class="card-content">
+                    <div class="card-subtitle">PENGALAMAN KERJA</div>
+ 
+                    <div class="card-timeline">
+                        <div class="card-item">
+                            <div class="card-item-year">2021</div>
+                            <div class="card-item-title">Graphic Designer at <span>CM Coffee</span></div>
+                            <div class="card-item-desc">Menciptakan berbagai materi visual untuk mendukung kampanye pemasaran dan branding produk.</div>
+                        </div>
+
+                        <div class="card-item">
+                            <div class="card-item-year">2021 - 2023</div>
+                            <div class="card-item-title">Creative Director at <span>Baymedia</span></div>
+                            <div class="card-item-desc">Memimpin tim kreatif dalam pengembangan konsep dan eksekusi strategi marketing digital untuk berbagai klien.</div>
+                        </div>
+
+                        <div class="card-item">
+                            <div class="card-item-year">2022 - 2024</div>
+                            <div class="card-item-title">Admin & Food Reviewer at <span>Konten Lapar</span></div>
+                            <div class="card-item-desc">Bertanggung jawab sebagai admin media sosial dan food reviewer, mengelola konten untuk brand 'Konten Lapar' (sikopar).</div>
+                        </div>
+     
+                        <div class="card-item">
+                            <div class="card-item-year">2023 - 2025</div>
+                            <div class="card-item-title">CEO & Founder at <span>Ragency</span></div>
+                            <div class="card-item-desc">Mendirikan dan memimpin agensi digital marketing, menyusun strategi bisnis, dan mengelola operasional untuk pertumbuhan agensi.</div>
+                        </div>
+
+                        <div class="card-item">
+                            <div class="card-item-year">2024 - 2025</div>
+                            <div class="card-item-title">Content Creator at <span>Rosa Kulineran</span></div>
+                            <div class="card-item-desc">Membangun brand personal sebagai food reviewer, membuat serta mengelola konten ulasan kuliner secara mandiri.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="card-section" id="contact">
+                <div class="card-content">
+                    <div class="card-subtitle">KONTAK</div>
+                    <div class="card-contact-wrapper">
+                         <a class="card-contact" href="https://wa.me/6281358442991" target="_blank">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>
+                            0813-5844-2991
+                        </a>
+                        <a class="card-contact" href="mailto:rosaoktaf1234@gmail.com" target="_blank">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <path d="M22 6l-10 7L2 6" /></svg>
+                           rosaoktaf1234@gmail.com
+                        </a>
+                         <a class="card-contact" href="https://ragency.id/" target="_blank">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            https://ragency.id/
+                        </a>
+                        <a class="card-contact" href="https://www.instagram.com/rosakulineran" target="_blank">
+                            <i class="fi fi-brands-instagram"></i>
+                            @rosakulineran
+                        </a>
+                        <a class="card-contact" href="https://www.tiktok.com/@rosakulineran" target="_blank">
+                            <i class="fi fi-brands-tik-tok"></i>
+                            @rosakulineran
+                        </a>
+                        <div class="card-contact">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" /></svg>
+                            Peterongan, Jombang
+                        </div>
+                        <a href="https://wa.me/6281358442991?text=Halo%20Rosa,%20saya%20tertarik%20untuk%20bekerja%20sama." target="_blank" class="contact-me">KOLABORASI SEKARANG</a>
+
+                    </div>
+                </div>
+            </div>
+        </div></div></body>
+</html>
